@@ -38,7 +38,7 @@ Your solution will be evaluated based on the following criteria:
 
 1. Create a personal Github / Gitlab / Bitbucket repo, add this README.md file to it.
 2. Complete the task as described in the Objective and Task Description sections and commit your code.
-3. Send us a link to the repository.
+3. Submit your repo link here: https://blinkin.typeform.com/to/bDKt3BTq
 4. We will review your solution and provide feedback.
 
 ## Notes
