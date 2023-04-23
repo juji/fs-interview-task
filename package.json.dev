@@ -1,0 +1,15 @@
+{
+  "name": "fs-interview-task",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:juji/fs-interview-task.git",
+  "author": "juji <jujiyangasli@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+      "copy": "cp package.json.dev package.json",
+      "dev": "concurrently \"cd api && yarn start\" \"cd frontend && yarn dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}
