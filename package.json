@@ -6,6 +6,9 @@
   "author": "juji <jujiyangasli@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "install:api": "cd frontend; yarn",
+    "install:frontend": "cd api; yarn",
+    "postinstall": "yarn install:frontend; yarn install:api",
     "dev": "node concurrent.js"
   },
   "devDependencies": {

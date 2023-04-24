@@ -7,7 +7,7 @@ export default function UserBar(){
     if (isLoading) return <div className={style.userbar}>Loading User...</div>;
     if (error) return <div className={`${style.userbar} ${style.error}`}>{error.message}</div>;
 
-    console.log('user', user)
+    // console.log('user', user)
 
     return user ? <div className={style.userbar}>
         <div className={style.userbarLeft}>

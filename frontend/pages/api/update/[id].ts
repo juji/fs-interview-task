@@ -9,7 +9,6 @@ export default withApiAuthRequired(async function getList(req, res) {
 
     const response = await requestWithToken({
         req, res, 
-        scopes: ['write:todo'],
         uri: `/item/${id}`,
         method: 'PATCH',
         data: { text, done }

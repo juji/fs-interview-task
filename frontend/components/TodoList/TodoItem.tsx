@@ -55,7 +55,7 @@ export default function TodoItem({
     if(isRemoved) return null
 
     if(!canUpdate) return <ul className={styles.noUpdate}>
-        <li>{item.text}</li>
+        <li>{done ? <s>{item.text}</s> : item.text}</li>
     </ul>
 
     return <div className={styles.todoItem}>

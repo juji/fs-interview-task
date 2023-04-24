@@ -6,7 +6,6 @@ export default withApiAuthRequired(async function getList(req, res) {
 
     const list = await requestWithToken({
         req, res, 
-        scopes: ['read:todo'],
         uri: '/list'
     });
 

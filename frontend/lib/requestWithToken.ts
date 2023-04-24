@@ -6,7 +6,6 @@ const apiPrefix = process.env.API_PREFIX;
 export default async function requestWithToken({
     req,
     res,
-    scopes,
     uri,
     data,
     method = 'GET',
@@ -14,14 +13,12 @@ export default async function requestWithToken({
 }:{
     req: NextApiRequest
     res: NextApiResponse
-    scopes: string[]
     uri: string
     data?: any
     method?: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH' | 'HEAD',
     contentType?: string
 }){
 
-    // const { accessToken } = await getAccessToken(req, res, { scopes });
     const { accessToken } = await getAccessToken(req, res);
 
     // console.log('accessToken', accessToken)
