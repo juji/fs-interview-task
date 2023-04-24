@@ -69,6 +69,7 @@ export default function TodoItem({
             onFocus={() => setIsFocused(true)}
         >
             <input type="text" 
+                disabled={!!currentDone}
                 value={currentText}
                 onChange={e => setText(e.target.value)}
             />
