@@ -1,8 +1,8 @@
 import express from "express";
 import cors from "cors";
-import routes from '@/routes'
 import errorHandler from '@/lib/errorHandler'
 
+import routes from '@/routes'
 import prisma from "@/lib/prisma";
 
 class App {
@@ -19,11 +19,20 @@ class App {
 
   }
 
-  static async listen( port: number|null ){
+  static async exiting(){
 
     // If the Node process ends, close the db connection
-    process.on('SIGINT', async function() {
-      await prisma.$disconnect()
+    await prisma.$disconnect()
+    console.log('DONE: prisma.$disconnect')
+
+  }
+
+  static async listen( port: number|null ){
+
+    process.on('SIGINT', async () => {
+      console.log('SIGINT received')
+      await this.exiting()
+      process.exit()
     });
 
     this.app.listen( port || 3333, () => {

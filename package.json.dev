@@ -6,8 +6,7 @@
   "author": "juji <jujiyangasli@gmail.com>",
   "license": "MIT",
   "scripts": {
-      "copy": "cp package.json.dev package.json",
-      "dev": "concurrently \"cd api && yarn start\" \"cd frontend && yarn dev\""
+    "dev": "node concurrent.js"
   },
   "devDependencies": {
     "concurrently": "^8.0.1"
