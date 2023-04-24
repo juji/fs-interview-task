@@ -22,11 +22,14 @@ export default async function requestWithToken({
 }){
 
     // const { accessToken } = await getAccessToken(req, res, { scopes });
+    const { accessToken } = await getAccessToken(req, res);
+
+    // console.log('accessToken', accessToken)
 
     const response = await fetch(`${apiPrefix}${uri}`, {
         method,
         headers: {
-            // Authorization: `Bearer ${accessToken}`,
+            Authorization: `Bearer ${accessToken}`,
             ...(data?{ 'Content-Type': contentType }:{})
         },
         ...(data?{ body: JSON.stringify(data) }:{})

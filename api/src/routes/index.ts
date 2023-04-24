@@ -8,8 +8,7 @@ const router = Router();
 
 router.all("/", (req, res) => res.json({ version: "0.0.1" }));
 
-// router.get("/list", jwtCheck, allowRead, async (req, res) => {
-router.get("/list", async (req, res) => {
+router.get("/list", jwtCheck, allowRead, async (req, res) => {
 
     const todos = await prisma.todo.findMany({
         where: { deletedAt: null },
@@ -22,8 +21,7 @@ router.get("/list", async (req, res) => {
 
 });
 
-// router.post("/item", jwtCheck, allowWrite, async (req, res) => {
-router.post("/item", async (req, res) => {
+router.post("/item", jwtCheck, allowWrite, async (req, res) => {
 
     const { text } = req.body
     const todo = await prisma.todo.create({
@@ -33,8 +31,7 @@ router.post("/item", async (req, res) => {
 
 });
 
-// router.patch("/item/:id", jwtCheck, allowWrite, async (req, res) => {
-router.patch("/item/:id", async (req, res) => {
+router.patch("/item/:id", jwtCheck, allowWrite, async (req, res) => {
 
     const { id } = req.params
     const { text, done } = req.body
@@ -47,8 +44,7 @@ router.patch("/item/:id", async (req, res) => {
     
 });
 
-// router.delete("/item/:id", jwtCheck, allowWrite, async (req, res) => {
-router.delete("/item/:id", async (req, res) => {
+router.delete("/item/:id", jwtCheck, allowWrite, async (req, res) => {
 
     const { id } = req.params
     const todo = await prisma.todo.update({

@@ -1,6 +1,5 @@
 import { auth, requiredScopes }  from 'express-oauth2-jwt-bearer';
 
-
 export const jwtCheck = auth({
     audience: 'http://localhost:3333',
     issuerBaseURL: 'https://jujiyangasli.auth0.com/',
