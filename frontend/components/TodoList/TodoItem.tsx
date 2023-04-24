@@ -20,13 +20,13 @@ export default function TodoItem({
     const [ isRemoved, setRemoved ] = useState(false)
 
     const updateDone = async () => {
-        const isDone = !item.done
+        const isDone = !done
         setDone(isDone)
 
         try{
             onUpdate && await onUpdate(id, text, isDone)
         }catch(e){
-            setDone(!isDone)
+            setDone(done)
         }
     }
 
