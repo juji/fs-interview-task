@@ -1,11 +1,9 @@
 import express from "express";
 import cors from "cors";
 import routes from '@/routes'
-import { auth } from 'express-openid-connect'
-import outh0 from '@/lib/auth0.json'
+import errorHandler from '@/lib/errorHandler'
 
-
-const port = 3333
+import prisma from "@/lib/prisma";
 
 class App {
 
@@ -16,15 +14,20 @@ class App {
     this.app.set('trust proxy',true)
     this.app.use(cors());
     this.app.use(express.json());
-    this.app.use(auth(outh0));
     this.app.use(routes);
+    this.app.use(errorHandler);
 
   }
 
-  static async listen(){
+  static async listen( port: number|null ){
 
-    this.app.listen( port, () => {
-      console.log(`API listening on ${port}`);
+    // If the Node process ends, close the db connection
+    process.on('SIGINT', async function() {
+      await prisma.$disconnect()
+    });
+
+    this.app.listen( port || 3333, () => {
+      console.log(`API listening on ${port || 3333}`);
     })
 
   }

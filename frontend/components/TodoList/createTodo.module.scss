@@ -1,0 +1,27 @@
+
+.createTodoContainer{
+
+    margin-bottom: 1em;
+
+    .createTodo{
+
+        display: flex;
+        margin-bottom: 1em;
+    
+        input{
+            flex: 1 1 auto;
+            padding: 0.2rem 0.5rem;
+        }
+    
+        button{
+            flex: 0 0 auto;
+            padding: 0.7rem 1.5rem;
+            cursor: pointer;
+        }
+    
+    }
+
+    .createTodoError{
+        color: red;
+    }
+}

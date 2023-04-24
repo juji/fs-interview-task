@@ -1,0 +1,31 @@
+
+
+.userbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+
+    background-color: var(--background);
+
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+
+    &.error{
+        color: red;
+    }
+
+    .userbarLeft{
+        display: flex;
+        
+        img{
+            width: 55px;
+            height: auto;
+        }
+
+        span{
+            margin-left: 1rem;
+        }
+
+    }
+}

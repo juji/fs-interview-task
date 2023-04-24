@@ -1,0 +1,53 @@
+
+.noUpdate{
+
+    margin-left: 0.5rem;
+    padding: 0 1rem;
+    padding-top: 1rem;
+
+}
+
+.todoItem{
+
+    display: flex;
+    margin-bottom: 1rem;
+    
+    button{
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+
+    .isDone{
+        flex: 0 0 auto;
+        button{
+            font-size: 2rem;
+        }
+    }
+
+    .textField{
+        flex: 1 1 auto;
+        display: flex;
+        input{
+            flex: 1 1 auto;
+            padding: 0 0.7rem;
+        }
+
+        button{
+            flex: 0 0 auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+
+    .removeButton{
+        flex: 0 0 auto;
+        button{
+            font-size: 1.5rem;
+            padding: 0 1rem;
+            height: 100%;
+            border-color: red;
+            background-color: red;
+        }
+    }
+
+}
