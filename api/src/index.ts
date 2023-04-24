@@ -4,8 +4,10 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
+const port = process.env.PORT ? Number(process.env.PORT) : null
+
 App.bootstrap()
-.then(() => App.listen( process.env.PORT ? Number(process.env.PORT) : null ))
+.then(() => App.listen( port ))
 .catch((e: any) => {
   console.error('BOOTSTRAP ERROR');
   console.error(e);
