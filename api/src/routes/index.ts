@@ -10,13 +10,16 @@ router.all("/", (req, res) => res.json({ version: "0.0.1" }));
 
 // router.get("/list", jwtCheck, allowRead, async (req, res) => {
 router.get("/list", async (req, res) => {
+
     const todos = await prisma.todo.findMany({
         where: { deletedAt: null },
         orderBy: [
             { createdAt: 'desc' }
         ]
     })
+
     res.json(todos)
+
 });
 
 // router.post("/item", jwtCheck, allowWrite, async (req, res) => {
@@ -39,6 +42,7 @@ router.patch("/item/:id", async (req, res) => {
         where: { id },
         data: { text, done }
     })
+
     res.json(todo)
     
 });
@@ -51,6 +55,7 @@ router.delete("/item/:id", async (req, res) => {
         where: { id },
         data: { deletedAt: new Date() }
     })
+    
     res.json(todo)
     
 });
