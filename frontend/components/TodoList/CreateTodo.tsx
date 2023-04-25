@@ -25,9 +25,9 @@ export default function CreateTodo({ onCreate }:{
     }
 
     return <>
-        <div className={styles.createTodoContainer}>
+        <div data-testid="createtodo" className={styles.createTodoContainer}>
             <form onSubmit={create} className={styles.createTodo}>
-                <input placeholder="Add todo item here" value={value} onChange={(e) => setValue(e.target.value)} />
+                <input type="text" placeholder="Add todo item here" value={value} onChange={(e) => setValue(e.target.value)} />
                 <button disabled={!value} type="submit">Add</button>
             </form >
             <div className={styles.createTodoError}>

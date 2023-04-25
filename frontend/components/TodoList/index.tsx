@@ -26,11 +26,11 @@ export default function TodoList(){
 
         { loading ? <p>loading...</p> : 
             error ? <p className={styles.error}>{JSON.stringify(error)}</p> :
-            accessTokenScope ? <>
+            accessTokenScope ? <div data-testid="itemlist">
 
                 { accessTokenScope['write:todo'] ? 
                     <CreateTodo onCreate={createTodo} /> : null }
-                
+
                 {list.map((todo:any) => <TodoItem 
                     key={todo.id}
                     canUpdate={!!accessTokenScope['write:todo']}
@@ -39,12 +39,12 @@ export default function TodoList(){
                     item={todo} 
                 />)}
 
-                { accessTokenScope['write:todo'] ? <>
+                { accessTokenScope['write:todo'] ? <div data-testid="itemjson">
                     <p style={{margin:'2rem 0'}}>Data:</p>
                     <pre>{JSON.stringify(list,null,2)}</pre>
-                </> : null }
+                </div> : null }
                 
-            </> : null
+            </div> : null
         }
         
     </div>

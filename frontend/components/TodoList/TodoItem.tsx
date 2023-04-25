@@ -54,13 +54,19 @@ export default function TodoItem({
 
     if(isRemoved) return null
 
-    if(!canUpdate) return <ul className={styles.noUpdate}>
-        <li>{done ? <s>{item.text}</s> : item.text}</li>
+    if(!canUpdate) return <ul 
+        data-testid="todoitem"
+        className={styles.noUpdate}>
+        <li>
+            {done ? <s data-testid="todostrike">
+                {item.text}</s> : item.text}
+        </li>
     </ul>
 
     return <div className={styles.todoItem}>
         <div className={styles.isDone}>
-            <button disabled={isFocused} onClick={updateDone}>
+            <button data-testid="todoitemdone" 
+                disabled={isFocused} onClick={updateDone}>
                 {currentDone ? '☑' : '☐' }
             </button>
         </div>
@@ -68,14 +74,14 @@ export default function TodoItem({
             onBlur={updateText}
             onFocus={() => setIsFocused(true)}
         >
-            <input type="text" 
+            <input type="text" data-testid="todoiteminput"
                 disabled={!!currentDone}
                 value={currentText}
                 onChange={e => setText(e.target.value)}
             />
         </form>
         <div className={styles.removeButton}>
-            <button onClick={remove}>x</button>
+            <button data-testid="todoitemremove" onClick={remove}>x</button>
         </div>
     </div>
 

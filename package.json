@@ -8,10 +8,25 @@
   "scripts": {
     "install:api": "cd frontend; yarn",
     "install:frontend": "cd api; yarn",
+    "build:api": "cd frontend; yarn build",
+    "build:frontend": "cd api; yarn build",
+    "build": "yarn build:api; yarn build:frontend",
     "postinstall": "yarn install:frontend; yarn install:api",
-    "dev": "node concurrent.js"
+    "dev:api": "cd api; yarn dev",
+    "dev:frontend": "cd frontend; yarn dev",
+    "dev": "concurrently 'yarn dev:api' 'yarn dev:frontend'",
+    "start:api": "cd api; yarn start",
+    "start:frontend": "cd frontend; yarn start",
+    "start": "concurrently 'yarn start:api' 'yarn start:frontend'",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test:integration:watch": "start-server-and-test 'yarn start' http://127.0.0.1:3000 'yarn cypress:open'",
+    "test:integration": "start-server-and-test 'yarn start' http://127.0.0.1:3000 'yarn cypress:run'"
   },
   "devDependencies": {
-    "concurrently": "^8.0.1"
+    "concurrently": "^8.0.1",
+    "cypress": "^12.10.0",
+    "dotenv": "^16.0.3",
+    "start-server-and-test": "^2.0.0"
   }
 }

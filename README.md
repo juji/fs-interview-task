@@ -1,5 +1,9 @@
 # Interview Task: Implementing a Role-Based Access Control (RBAC) system using Node.js and React
 
+## Notes
+
+Checkout `NOTES.md` for developer's note
+
 ## Objective
 
 The goal of this task is to assess your understanding of Node.js, React, and your ability to implement a simple Role-Based Access Control (RBAC) system using Auth0 or a similar authentication provider. You will create a Node.js backend with a very basic React interface to manage users and their permissions.
