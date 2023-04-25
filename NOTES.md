@@ -4,7 +4,9 @@ This is a simple todo App.
 Written using [NextJs](https://nextjs.org/) and [ExpressJS](https://expressjs.com/).
 
 I use `Yarn`. It's just a habit I have.
+
 I use mac in developing this.
+
 This wasn't tested in Windows.
 
 ## installing dependencies
@@ -19,6 +21,7 @@ yarn dev
 ```
 
 The frontend is at http://localhost:3000
+
 The API is at http://localhost:3333
 
 Visit the frontend to see how the app works
@@ -46,7 +49,7 @@ yarn build
 
 For the API, you can see the build in the `api/dist` directory.
 
-## Tests
+## Testings
 
 ### e2e testing: cypress
 
