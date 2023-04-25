@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Application } from "express";
 import cors from "cors";
 import errorHandler from '@/lib/errorHandler'
 
@@ -8,9 +8,9 @@ import logger from "@/lib/logger";
 
 class App {
 
-  static app = express();
+  static app:Application = express();
 
-  static async bootstrap(){
+  static bootstrap(){
 
     this.app.set('trust proxy',true)
     this.app.use(cors());
@@ -18,6 +18,8 @@ class App {
     this.app.use(logger);
     this.app.use(routes);
     this.app.use(errorHandler);
+
+    return this.app
 
   }
 

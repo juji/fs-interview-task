@@ -1,5 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 
+const isTesting = process.env.TEST || process.env.TESTING
+
 export default function errorHandler(
     err: any, 
     req: Request, 
@@ -9,11 +11,11 @@ export default function errorHandler(
 
     // if headers sent, just print
     if(res.headersSent){
-        console.log(err)
+        if(!isTesting) console.log(err)
         return;
     }
 
-    console.error(err.stack || err)
+    if(!isTesting) console.error(err.stack || err)
     res.status(500).send('Something broke!')
 
 }
