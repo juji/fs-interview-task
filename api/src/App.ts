@@ -4,7 +4,7 @@ import errorHandler from '@/lib/errorHandler'
 
 import routes from '@/routes'
 import prisma from "@/lib/prisma";
-import logger from "@/lib/logger";
+// import logger from "@/lib/logger";
 
 class App {
 
