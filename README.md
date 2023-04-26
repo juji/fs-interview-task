@@ -2,7 +2,7 @@
 
 ## Notes
 
-Checkout `NOTES.md` for developer's note
+Checkout `NOTES.md` to see my note about this app.
 
 ## Objective
 

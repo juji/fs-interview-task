@@ -3,6 +3,17 @@
 This is a simple todo App. 
 Written using [NextJs](https://nextjs.org/) and [ExpressJS](https://expressjs.com/).
 
+I use NextJs. It is a mature framework, has good documentation, with a big user base.
+Also, I used it before, and documentations about it in the web space, and in third party libraries are immense.
+
+I would like to try [Remix](https://remix.run/) and [svelte](https://kit.svelte.dev/) tho... Maybe one day in the future..
+
+ExpressJS is an API frameworks used by many, 
+and I used it a lot on my previous projects. Based on that, 
+I choose to use ExpressJS in this project.
+
+Mostly, I just use what many people use for the case in hand.
+
 I use mac in developing this.
 
 This wasn't tested in Windows. Because I don't have one. 
@@ -12,7 +23,7 @@ You might be able to change that... hehe
 
 Environment files are included on purpose.
 
-Ussualy, I don't include environment files. Because it ussually include secrets that should be hidden, and we should have different values for Dev, Testing, and Live environment.
+Ussualy, I don't include environment files. Because it includes secrets that should be hidden, and we should have different values for Dev, Testing, and Live environment.
 
 This is a test case. So, for easier evaluation, I am including them.
 
@@ -24,7 +35,7 @@ API docs is avalable in [postman](https://www.postman.com/juji/workspace/fs-inte
 
 To be able to update, or delete a todo Item, you will have to update the `itemId` variable in the `Todo` Collection.
 
-![image](https://i.imgur.com/qhxTePB.png)
+![updating itemId](https://i.imgur.com/qhxTePB.png)
 
 It uses `localhost:3333`. So you will need the API to run in your local environment.
 
