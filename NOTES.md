@@ -69,7 +69,7 @@ To login to the app, use this credentials:
 user: admin
 password: asdf
 
-user: regular
+user: user
 password: asdf
 ```
 

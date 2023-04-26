@@ -3,7 +3,7 @@
 .userbar{
     display: flex;
     justify-content: space-between;
-    padding: 2rem 1rem;
+    padding: 2rem 0;
 
     background-color: var(--background);
 
@@ -23,8 +23,28 @@
             height: auto;
         }
 
-        span{
+        div{
             margin-left: 1rem;
+
+            span{
+                display: block;
+                margin-bottom: 1rem;
+            }
+        }
+
+    }
+
+    .userbarRight{
+        text-align: right;
+        a{
+            margin-bottom: 0.5rem;
+            display: block;
+
+            @media screen and (min-width: 500px) {
+                margin-bottom: 0rem;
+                margin-left: 1rem;
+                display: inline;
+            }
         }
 
     }

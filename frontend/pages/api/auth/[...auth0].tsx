@@ -9,6 +9,9 @@ const afterCallback = async (
 
     // console.log('session', session);
 
+    // add accessTokenScope to user object
+    // so the browser can read it
+    // and make it an object to ease in selecting
     session.user.accessTokenScope = session.accessTokenScope
         .split(' ').reduce((a:any,b:string) => {
             return {

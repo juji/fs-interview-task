@@ -1,0 +1,23 @@
+
+
+.user{
+
+    display: flex;
+    padding: 1rem 0;
+    border-bottom: 1px dotted grey;
+
+    &>p{
+        flex: 1 1 auto;
+        span{
+            color: grey;
+        }
+    }
+
+    &>div{
+        flex: 0 0 auto;
+        label{
+            margin-left: 0.5rem;
+        }
+    }
+
+}

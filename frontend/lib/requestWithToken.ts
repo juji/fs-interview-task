@@ -21,8 +21,6 @@ export default async function requestWithToken({
 
     const { accessToken } = await getAccessToken(req, res);
 
-    // console.log('accessToken', accessToken)
-
     const response = await fetch(`${apiPrefix}${uri}`, {
         method,
         headers: {
