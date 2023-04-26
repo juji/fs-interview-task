@@ -9,19 +9,19 @@ import { useRouter } from 'next/router'
 export default function AdminOnly({ children }:{ children: ReactNode }){
     
     const { user, error: userError, isLoading } = useUser();
-    if(userError || isLoading) return null; // loading?
-
+    
     const router = useRouter()
     const accessTokenScope:any = user && user.accessTokenScope
     useEffect(() => {
-
+        
         if(
             (!user && !isLoading) ||
             !accessTokenScope.admin
-        ) router.push('/')
-
-    },[ user, isLoading, accessTokenScope ])
-
-    return user ? <>{children}</> : null;
+            ) router.push('/')
+            
+        },[ user, isLoading, accessTokenScope, router ])
+        
+    return (userError || isLoading) ? null : 
+        (user ? <>{children}</> : null);
 
 }

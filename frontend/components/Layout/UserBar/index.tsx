@@ -2,6 +2,7 @@ import { useUser } from '@auth0/nextjs-auth0/client';
 import style from './userbar.module.scss'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import Image from 'next/image';
 
 
 export default function UserBar(){
@@ -16,16 +17,16 @@ export default function UserBar(){
 
     return user ? <div className={style.userbar}>
         <div className={style.userbarLeft}>
-            <img src={user.picture as string} alt={user.nickname as string} />
+            <Image src={user.picture as string} alt={user.name as string} />
             <div>
-                <span data-testid="username">{user.nickname}</span>
+                <span data-testid="username">{user.name}</span>
                 <Link href="/api/auth/logout">logout</Link>
             </div>
         </div>
         <div className={style.userbarRight}>
             {accessTokenScope?.admin ? 
                 (pathname !== '/' ? 
-                    <Link href="/">&lt; Back</Link> :
+                    <Link href="/">&lt; Home</Link> :
                     <Link href="/users">Manage Users</Link>) : null}
         </div>
         {/* <pre>

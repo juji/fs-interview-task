@@ -11,7 +11,7 @@ describe('admin', () => {
         user.password
       )
   
-      cy.checkUserName(user.username)
+      cy.checkUserName(user.name)
       cy.todoListExists()
       cy.createTodoExists( true )
       cy.itemJsonExists( true )

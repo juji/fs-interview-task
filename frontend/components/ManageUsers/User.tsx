@@ -1,5 +1,5 @@
 import { useState, useMemo, ChangeEvent } from 'react'
-import randomstring from 'randomstring'
+// import randomstring from 'randomstring'
 
 import styles from './user.module.scss'
 
@@ -15,8 +15,9 @@ export default function User ({
     const [ allowWrite, setAllowWrite ] = useState(
         !!user.permissions.find((v:any) => v.permission_name === 'write:todo')
     )
-
-    const checkBoxId = useMemo(() => randomstring.generate(),[ user ])
+    
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const checkBoxId = useMemo(() => `checkbox${Math.random()}`,[ user ])
     const onchange = async (e: ChangeEvent<HTMLInputElement>) => {
 
         const val = !!e.target.checked
@@ -29,7 +30,7 @@ export default function User ({
     }
 
     return <div className={styles.user}>
-        <p>{user.nickname} {isAdmin?<span>(admin can't be managed here)</span>:null}</p>
+        <p>{user.name} {isAdmin?<span>(admin can&apos;t be managed here)</span>:null}</p>
         {isAdmin?null:<div>
             <input type="checkbox" 
                 checked={allowWrite}

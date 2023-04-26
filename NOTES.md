@@ -73,6 +73,18 @@ user: user
 password: asdf
 ```
 
+admin can:
+ - add or remove todo items
+ - manage user permission
+
+user can: (by default)
+ - view todo items
+
+### Setting permission for user
+
+For the user to be able to update the todo list, 
+you should login as admin, go to `Manage Users` page,
+set check 'Allow Write' for Joko (Which is the name of the user)
 
 ## Building the App
 

@@ -11,7 +11,7 @@ describe('user', () => {
         user.password
       )
   
-      cy.checkUserName(user.username)
+      cy.checkUserName(user.name)
       cy.todoListExists()
       cy.createTodoExists( false )
       cy.itemJsonExists( false )
