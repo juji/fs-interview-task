@@ -115,5 +115,7 @@ Using [https://jestjs.io/](https://jestjs.io/)
 yarn test:api
 ```
 
+Since this is a demo, I use the live database to test. 
+
 cheers, [jujiyangasli.com](https://jujiyangasli.com)
 
