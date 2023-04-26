@@ -15,7 +15,7 @@ class App {
     this.app.set('trust proxy',true)
     this.app.use(cors());
     this.app.use(express.json());
-    this.app.use(logger);
+    // this.app.use(logger);
     this.app.use(routes);
     this.app.use(errorHandler);
 
