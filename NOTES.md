@@ -26,6 +26,8 @@ To be able to update, or delete a todo Item, you will have to update the `itemId
 
 ![image](https://i.imgur.com/qhxTePB.png)
 
+It uses `localhost:3333`. So you will need the API to run in your local environment.
+
 ## Using yarn
 
 I use `Yarn`. It's just a habit I have. Checkout yarn [here](https://yarnpkg.com/).
