@@ -20,6 +20,7 @@
     "start": "concurrently 'yarn start:api' 'yarn start:frontend'",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
+    "test:api": "cd api; yarn test",
     "test:integration": "start-server-and-test 'yarn start' http://127.0.0.1:3000/test/login 'yarn cypress:run'",
     "test:integration:watch": "start-server-and-test 'yarn start' http://127.0.0.1:3000/test/login 'yarn cypress:open'"
   },

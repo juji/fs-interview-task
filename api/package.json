@@ -19,7 +19,7 @@
   "scripts": {
     "start": "TS_NODE_BASEURL=./dist node -r tsconfig-paths/register ./dist/index.js",
     "dev": "nodemon",
-    "build": "tsc",
+    "build": "tsc --project tsconfig.build.json",
     "test": "TEST=true jest --detectOpenHandles"
   },
   "dependencies": {

@@ -3,11 +3,32 @@
 This is a simple todo App. 
 Written using [NextJs](https://nextjs.org/) and [ExpressJS](https://expressjs.com/).
 
-I use `Yarn`. It's just a habit I have.
-
 I use mac in developing this.
 
-This wasn't tested in Windows.
+This wasn't tested in Windows. Because I don't have one. 
+You might be able to change that... hehe
+
+## Environment Files
+
+Environment files are included on purpose.
+
+Ussualy, I don't include environment files. Because it ussually include secrets that should be hidden, and we should have different values for Dev, Testing, and Live environment.
+
+This is a test case. So, for easier evaluation, I am including them.
+
+You can see the environtment files I used in `frontend/.env.local` and `api/.env`
+
+## Docs
+
+API docs is avalable in [postman](https://www.postman.com/juji/workspace/fs-interview-task/overview).
+
+To be able to update, or delete a todo Item, you will have to update the `itemId` variable in the `Todo` Collection.
+
+![image](https://i.imgur.com/qhxTePB.png)
+
+## Using yarn
+
+I use `Yarn`. It's just a habit I have. Checkout yarn [here](https://yarnpkg.com/).
 
 ## installing dependencies
 ```bash
@@ -20,11 +41,11 @@ yarn
 yarn dev
 ```
 
-The frontend is at http://localhost:3000
+The frontend is at [http://localhost:3000](http://localhost:3000)
 
-The API is at http://localhost:3333
+The API is at [http://localhost:3333](http://localhost:3333)
 
-Visit the frontend to see how the app works
+Visit the frontend to see how the app works.
 
 
 ## Users
@@ -47,18 +68,27 @@ This will build the app
 yarn build
 ```
 
-For the API, you can see the build in the `api/dist` directory.
+For the API, it will be available in the `api/dist` directory.
 
 ## Testings
 
 ### e2e testing: cypress
 
-[https://www.cypress.io/](https://www.cypress.io/)
+Using [https://www.cypress.io/](https://www.cypress.io/)
 
 You should build the app first to be able to test:
 
 ```
-yarn build
-yarn test:integration
+yarn build && yarn test:integration
 ```
+
+### API testing: jest
+
+Using [https://jestjs.io/](https://jestjs.io/)
+
+```
+yarn test:api
+```
+
+cheers, [jujiyangasli.com](https://jujiyangasli.com)
 
