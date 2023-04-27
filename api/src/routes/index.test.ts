@@ -32,11 +32,24 @@ describe('GET /list',() => {
         const res = await request(app).get('/list')
         expect(res.statusCode).not.toEqual(200)
 
+    })
+
+    it('should be ok using read permission', async () => {
 
         await request(app)
             .get('/list')
             .set('Authorization', PERMISSION.READ)
             .expect(200)
+
+    })
+
+    it('should fail using write permission', async () => {
+
+        const res = await request(app)
+            .get('/list')
+            .set('Authorization', PERMISSION.WRITE)
+        
+        expect(res.statusCode).not.toEqual(200)
 
     })
 
