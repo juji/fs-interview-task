@@ -1,10 +1,10 @@
 import { useState, FormEvent } from 'react'
 import styles from './todoItemList.module.scss'
 
-export default function TodoItem({
+export default function TodoItemList({
     item
 }:{
-    item: any
+    item: { id: string, text: string, done: boolean }
 }){
 
     const { id, text, done } = item
@@ -13,7 +13,7 @@ export default function TodoItem({
     return <ul 
         data-testid="todoitem"
         className={styles.todoItemList}>
-        <li>
+        <li data-testid="todotext">
             {done ? <s data-testid="todostrike">
                 {text}</s> : text}
         </li>

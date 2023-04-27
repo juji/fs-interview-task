@@ -1,12 +1,12 @@
 import { useState, FormEvent } from 'react'
 import styles from './todoItemInput.module.scss'
 
-export default function TodoItem({
+export default function TodoItemInput({
     item,
     onUpdate,
     onRemove,
 }:{
-    item: any
+    item: { id: string, text: string, done: boolean }
     onUpdate: (id: string, text: string, done: boolean) => void
     onRemove: (id: string) => void
 }){
@@ -57,7 +57,7 @@ export default function TodoItem({
                 {currentDone ? '☑' : '☐' }
             </button>
         </div>
-        <form onSubmit={updateText} className={styles.textField}
+        <form data-testid="todoitemform" onSubmit={updateText} className={styles.textField}
             onBlur={updateText}
             onFocus={() => setIsFocused(true)}
         >

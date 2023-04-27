@@ -4,8 +4,6 @@ import User from './User'
 
 export default function ManageUsers (){
 
-    
-
     const { users, error, loading, setWritePermission } = useUsers()
 
     const onChange = (user:any, allowWrite:boolean) => {

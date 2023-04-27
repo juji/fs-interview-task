@@ -25,8 +25,8 @@ export default function TodoList(){
     return <div className={styles.todoList}>
         <h1>Todo List</h1>
 
-        { loading ? <p>loading...</p> : 
-            error ? <p className={styles.error}>{JSON.stringify(error)}</p> :
+        { loading ? <p data-testid="lodinglist">loading...</p> : 
+            error ? <p data-testid="errorlist" className={styles.error}>{JSON.stringify(error)}</p> :
             accessTokenScope ? <div data-testid="itemlist">
 
                 { accessTokenScope['write:todo'] ? 

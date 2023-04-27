@@ -26,9 +26,9 @@ export default function CreateTodo({ onCreate }:{
 
     return <>
         <div data-testid="createtodo" className={styles.createTodoContainer}>
-            <form onSubmit={create} className={styles.createTodo}>
-                <input type="text" placeholder="Add todo item here" value={value} onChange={(e) => setValue(e.target.value)} />
-                <button disabled={!value} type="submit">Add</button>
+            <form data-testid="createtodoform" onSubmit={create} className={styles.createTodo}>
+                <input data-testid="createtodoinput" type="text" placeholder="Add todo item here" value={value} onChange={(e) => setValue(e.target.value)} />
+                <button data-testid="createtodosubmit" disabled={!value} type="submit">Add</button>
             </form >
             <div className={styles.createTodoError}>
                 { error ? JSON.stringify(error) : null }
