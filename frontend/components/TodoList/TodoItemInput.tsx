@@ -1,16 +1,14 @@
 import { useState, FormEvent } from 'react'
-import styles from './todoItem.module.scss'
+import styles from './todoItemInput.module.scss'
 
 export default function TodoItem({
     item,
     onUpdate,
     onRemove,
-    canUpdate = true
 }:{
     item: any
-    canUpdate?: boolean
-    onUpdate?: (id: string, text: string, done: boolean) => void
-    onRemove?: (id: string) => void
+    onUpdate: (id: string, text: string, done: boolean) => void
+    onRemove: (id: string) => void
 }){
 
     const { id, text, done } = item
@@ -52,18 +50,7 @@ export default function TodoItem({
         }
     }
 
-    if(isRemoved) return null
-
-    if(!canUpdate) return <ul 
-        data-testid="todoitem"
-        className={styles.noUpdate}>
-        <li>
-            {done ? <s data-testid="todostrike">
-                {item.text}</s> : item.text}
-        </li>
-    </ul>
-
-    return <div className={styles.todoItem}>
+    return isRemoved ? null : <div className={styles.todoItem}>
         <div className={styles.isDone}>
             <button data-testid="todoitemdone" 
                 disabled={isFocused} onClick={updateDone}>

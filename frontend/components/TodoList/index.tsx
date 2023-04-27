@@ -4,7 +4,8 @@ import { useUser } from '@auth0/nextjs-auth0/client';
 import styles from './todoList.module.scss'
 import useTodo from './useTodo'
 import CreateTodo from './CreateTodo'
-import TodoItem from './TodoItem'
+import TodoItemInput from './TodoItemInput'
+import TodoItemList from './TodoItemList'
 
 export default function TodoList(){
 
@@ -31,13 +32,12 @@ export default function TodoList(){
                 { accessTokenScope['write:todo'] ? 
                     <CreateTodo onCreate={createTodo} /> : null }
 
-                {list.map((todo:any) => <TodoItem 
+                {list.map((todo:any) => !!accessTokenScope['write:todo'] ? <TodoItemInput 
                     key={todo.id}
-                    canUpdate={!!accessTokenScope['write:todo']}
                     onUpdate={updateTodo}
                     onRemove={deleteTodo}
                     item={todo} 
-                />)}
+                /> : <TodoItemList key={todo.id} item={todo} /> )}
 
                 { accessTokenScope['write:todo'] ? <div data-testid="itemjson">
                     <p style={{margin:'2rem 0'}}>Data:</p>

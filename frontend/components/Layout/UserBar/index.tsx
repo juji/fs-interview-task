@@ -17,7 +17,8 @@ export default function UserBar(){
 
     return user ? <div className={style.userbar}>
         <div className={style.userbarLeft}>
-            <Image src={user.picture as string} alt={user.name as string} />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={user.picture as string} alt={user.name as string} />
             <div>
                 <span data-testid="username">{user.name}</span>
                 <Link href="/api/auth/logout">logout</Link>
