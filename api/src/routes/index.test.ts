@@ -44,19 +44,26 @@ describe('GET /list',() => {
 
 describe('POST /item',() => {
     
-    it('checks for write permission', async () => {
+    it('checks for permission', async () => {
         
         const res = await request(app)
             .post('/item')
 
         expect(res.statusCode).not.toEqual(200)
 
+    })
+
+    it('should fail using read permission', async () => {
 
         const res2 = await request(app)
             .post('/item')
             .set('Authorization', PERMISSION.READ)
-
+    
         expect(res2.statusCode).not.toEqual(200)
+
+    })
+
+    it('should be ok using write permission', async () => {
 
         const text = 'asdf'
         const res3 = await request(app)
@@ -68,7 +75,7 @@ describe('POST /item',() => {
         expect(res3.body.id).toBeTruthy()
         expect(res3.body.text).toEqual( text )
         todo = res3.body
-        
+
     })
 
 })
@@ -82,12 +89,19 @@ describe('PATCH /item/:id',() => {
 
         expect(res.statusCode).not.toEqual(200)
 
+    })
+
+    it('should fail using read permission', async () => {
 
         const res2 = await request(app)
             .patch(`/item/${todo.id}`)
             .set('Authorization', PERMISSION.READ)
-
+    
         expect(res2.statusCode).not.toEqual(200)
+
+    })
+
+    it('should be ok using write permission', async () => {
 
         const text = 'zxcv'
         const res3 = await request(app)
@@ -99,7 +113,7 @@ describe('PATCH /item/:id',() => {
         expect(res3.body.id).toBeTruthy()
         expect(res3.body.text).toEqual( text )
         expect(res3.body.done).toEqual( false )
-        
+
     })
 
 })
@@ -113,6 +127,9 @@ describe('DELETE /item/:id',() => {
 
         expect(res.statusCode).not.toEqual(200)
 
+    })
+
+    it('should fail using read permission', async () => {
 
         const res2 = await request(app)
             .delete(`/item/${todo.id}`)
@@ -120,13 +137,17 @@ describe('DELETE /item/:id',() => {
 
         expect(res2.statusCode).not.toEqual(200)
 
+    })
+
+    it('should be ok using write permission', async () => {
+
         const res3 = await request(app)
             .delete(`/item/${todo.id}`)
             .set('Authorization', PERMISSION.WRITE)
         
         expect(res3.statusCode).toEqual(200)
         expect(res3.body.deletedAt).toBeTruthy()
-        
+
     })
 
 })
