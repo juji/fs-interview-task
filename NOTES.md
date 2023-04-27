@@ -117,7 +117,13 @@ yarn test:api
 
 Since this is a demo, I use the live database to test. 
 
-I apologize for not having enough time to write testing for frontend, aside from e2e..
+### Frontend testing: jest
+
+```
+yarn test:frontend
+```
+
+I apologize for not having enough time to write sufficient testing for frontend..
 
 cheers, [jujiyangasli.com](https://jujiyangasli.com)
 
